@@ -1,26 +1,30 @@
 #!/bin/bash
-OUTPUT_FILE=~/devops_day1/system_report_$(date +%Y%m%d_%H%M%S).txt
-echo "i have update system_chcek"
-echo "git practice session"
-echo "==============================="| tee -a $OUTPUT_FILE
-echo " System Health Report - $(date) "| tee -a $OUTPUT_FILE
-echo "==============================="| tee -a $OUTPUT_FILE
+
+REPORT_FILE="./system_report_$(date +%Y%m%d_%H%M%S).txt"
+
+echo "===============================" | tee -a "$REPORT_FILE"
+echo " System Health Report - $(date) " | tee -a "$REPORT_FILE"
+echo "===============================" | tee -a "$REPORT_FILE"
 
 # CPU Usage
-echo ""| tee -a $OUTPUT_FILEE
-echo "🔹 CPU Usage:"| tee -a $OUTPUT_FILE
-top -l 1 | grep "CPU usage"
+echo "🔹 CPU Usage:" | tee -a "$REPORT_FILE"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    top -l 1 | head -n 10 | tee -a "$REPORT_FILE"   # macOS
+else
+    top -b -n 1 | head -n 10 | tee -a "$REPORT_FILE"  # Linux
+fi
 
 # Memory Usage
-echo ""| tee -a $OUTPUT_FILE
-echo "🔹 Memory Usage:"| tee -a $OUTPUT_FILE
-vm_stat | grep 'Pages free\|Pages active\|Pages speculative'
+echo "🔹 Memory Usage:" | tee -a "$REPORT_FILE"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    vm_stat | tee -a "$REPORT_FILE"
+else
+    free -h | tee -a "$REPORT_FILE"
+fi
 
 # Disk Usage
-echo ""| tee -a $OUTPUT_FILE
-echo "🔹 Disk Usage:"| tee -a $OUTPUT_FILE
-df -h /
+echo "🔹 Disk Usage:" | tee -a "$REPORT_FILE"
+df -h | tee -a "$REPORT_FILE"
 
-echo ""| tee -a $OUTPUT_FILE
-echo "✅ Report complete!"| tee -a $OUTPUT_FILE
+echo "✅ Report complete!" | tee -a "$REPORT_FILE"
 
