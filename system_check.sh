@@ -1,6 +1,6 @@
 #!/bin/bash
 OUTPUT_FILE=~/devops_day1/system_report_$(date +%Y%m%d_%H%M%S).txt
-
+echo "i have update system_chcek"
 echo "git practice session"
 echo "==============================="| tee -a $OUTPUT_FILE
 echo " System Health Report - $(date) "| tee -a $OUTPUT_FILE
