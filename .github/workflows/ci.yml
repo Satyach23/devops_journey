@@ -12,11 +12,12 @@ jobs:
      - name: checkout repository
        uses: actions/checkout@v3
 
-     - name: Run system_check script
-       run: |
-         chmod +x system_check.sh
-         ./system_check.sh
-
+     - name: Build Docker image
+        run: docker build -t satya-hello -f dockerfile1
+    
+     - name: Run docker container
+        run: docker run satya-hello
+      
 
 
 
