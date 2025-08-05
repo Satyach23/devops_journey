@@ -2,17 +2,22 @@ name: CI Pipeline
 
 on:
    push:
-    branches: [main]
+     branches: [ main ]
 
 jobs:
-   build:
-     runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-   steps:
+    steps:
      - name: checkout repository
-       uses:  actions/checkout@v3
+       uses: actions/checkout@v3
 
      - name: Run system_check script
        run: |
          chmod +x system_check.sh
          ./system_check.sh
+
+
+
+
+
