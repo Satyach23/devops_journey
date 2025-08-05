@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: Devops journey  Pipeline
 
 on:
    push:
