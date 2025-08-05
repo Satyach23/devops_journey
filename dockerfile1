@@ -1,0 +1,4 @@
+FROM ubuntu:latest
+COPY satya.sh /satya.sh
+RUN chmod +x /satya.sh
+CMD ["/satya.sh"]
