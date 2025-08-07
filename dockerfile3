@@ -1,0 +1,4 @@
+FROM ubuntu:latest
+COPY system_check1.sh  /system_check1.sh
+RUN chmod +x /system_check1.sh
+CMD ["/system_check1.sh"]
