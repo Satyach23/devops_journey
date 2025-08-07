@@ -18,4 +18,8 @@ jobs:
      - name: Run docker container 
        run: docker run system_check1
 
-
+     - name: Build docker image for satya-hello
+       run: docker build -t satya-hello -f dockerfile1 .
+     
+     - name: Run docker container
+       run: docker run satya-hello
