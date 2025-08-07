@@ -35,3 +35,9 @@ jobs:
 
      - name: Run docker conatiner for sravani-image
        run: docker run sravani-image
+   
+     - name: Build Docker image for fool.py
+       run: docker build -t fool.py -f dockerfile4 .
+
+     - name: Run docker container for fool.py 
+       run: docker run fool.py
