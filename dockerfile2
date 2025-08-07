@@ -1,0 +1,6 @@
+
+
+FROM ubuntu:latest
+COPY sravani.sh /sravani.sh
+RUN  chmod +x /sravani.sh
+CMD  ["/sravani.sh"]
