@@ -13,9 +13,9 @@ jobs:
        uses: actions/checkout@v3
 
      - name: Build Docker image
-       run: docker build -t system_check1.sh -f dockerfile3 .    
+       run: docker build -t system_check1  -f dockerfile3 .    
 
      - name: Run docker container 
-       run: docker run system_check1.sh
+       run: docker run system_check1
 
 
