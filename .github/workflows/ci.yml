@@ -16,8 +16,12 @@ jobs:
        run: docker build -t sravani-image  -f dockerfile2 .
 
      - name: Run docker container  
-       run:  docker run   sravani-image    
+       run:  docker run   sravani-imag
+e
+     - name: Build Docker image
+       run: docker build -t system_check1.sh -f dockerfile3 .    
 
-
+     - name: Run docker container 
+       run: docker run system_check.sh
 
 
