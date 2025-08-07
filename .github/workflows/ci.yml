@@ -29,12 +29,6 @@ jobs:
      
      - name: Run docker container for satya-hello
        run: docker run satya-hello
-
-     - name: Build docker image for sravani-image
-       run: docker build -t sravani-image -f dockerfile2 .
-
-     - name: Run docker conatiner for sravani-image
-       run: docker run sravani-image
    
      - name: Build Docker image for fool.py
        run: docker build -t fool.py -f dockerfile4 .
