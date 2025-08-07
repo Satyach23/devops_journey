@@ -18,10 +18,10 @@ jobs:
      - name: Run docker container
        run: docker run satya-hello
 
-     - name: Build Docker image
+     - name: Build Docker image1
        run: docker build -t sravani.sh -f dockerfile2 .
 
-     - name: Run docker container 
+     - name: Run docker container1 
        run:  docker run sravani.sh      
 
 
