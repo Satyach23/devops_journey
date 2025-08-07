@@ -16,13 +16,13 @@ jobs:
        run: docker build -t satya-hello -f dockerfile1 .
     
      - name: Run docker container
-       run: docker run satya-hello
+       run: docker run --rm  satya-hello
 
-     - name: Build Docker image1
+     - name: Build Docker image 1
        run: docker build -t sravani.sh -f dockerfile2 .
 
-     - name: Run docker container1 
-       run:  docker run sravani.sh      
+     - name: Run docker container 1 
+       run:  docker run --rm  sravani.sh      
 
 
 
