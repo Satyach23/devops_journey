@@ -1,0 +1,4 @@
+FROM ubuntu:latest
+COPY hi.txt  /hi.txt
+RUN chmod +x /hi.txt
+CMD ["/hi.txt"]
