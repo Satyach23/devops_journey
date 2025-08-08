@@ -56,7 +56,7 @@ jobs:
        run: docker run aravind.py
        
      - name: Build docker image for main.py
-       run: docker build -t main.py -f dockerfile7 .
+       run: docker build -t main.py -f stage_demo/dockerfile7 stage_demo 
 
      - name: run a docker conatiner for main.py
        run: docker run main.py
