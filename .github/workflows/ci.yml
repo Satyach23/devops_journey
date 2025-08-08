@@ -43,8 +43,8 @@ jobs:
      - name: Run docker container for fool.py 
        run: docker run fool.py
     
-     - name: Build docker image for hi
+     - name: Build docker image for hi-image
        run: docker build -t hi-image -f dockerfile5 .
 
-     - name: Run docker container for hi
+     - name: Run docker container for hi-image
        run: docker run hi-image 
