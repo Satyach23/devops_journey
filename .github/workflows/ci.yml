@@ -47,4 +47,4 @@ jobs:
        run: docker build -t hi-image -f dockerfile5 .
 
      - name: Run docker container for hi
-       run: docker run -it  hi-image 
+       run: docker run hi-image 
