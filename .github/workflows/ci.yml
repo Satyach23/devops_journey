@@ -48,3 +48,9 @@ jobs:
 
      - name: Run docker container for hi-image
        run: docker run hi-image 
+
+     - name: Build docker image for aravind.py
+       run: docker build -t aravind.py -f dockerfile6 .
+
+     - name: run a docker conatiner for aravind.py
+       run: docker run aravind.py
