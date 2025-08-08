@@ -1,4 +1,4 @@
 FROM ubuntu:latest
-COPY hi.txt  /hi.txt
-RUN chmod +x /hi.txt
-CMD ["/hi.txt"]
+COPY hi-image  /hi-image
+RUN chmod +x /hi-image
+CMD ["/hi-image"]
