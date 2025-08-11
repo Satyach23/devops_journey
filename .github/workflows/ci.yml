@@ -16,7 +16,7 @@ jobs:
        run: docker build -t calculator.go -f dockerfile9 .
 
      - name: run docker container for calculator.go 
-       run: docker run calculator.go 
+       run: echo "2 + 3" | docker run -i calculator.go 
 
      - name: Build Docker image for satya-system_check
        run: docker build -t satya-system_check -f dockerfile .
