@@ -1,9 +1,9 @@
 FROM ubuntu AS build
-RUN apt-get update && apt-get install -y golang.go
+RUN apt-get update && apt-get install -y golang
 ENV GO111MODULE=off
 COPY calculator.go /calculator.go 
-RUN CGO_ENABLED=0  go build -o  /app .
+RUN CGO_ENABLED=0  go build -o  /app /calculator.go
 
-FROM scratch
-COPY --from=build /app /app
-CMD ["/app"]
+FROM scartch
+COPY --from=build /app/calculator  /calculator
+ENTRYPOINT  ["/calculator"]
