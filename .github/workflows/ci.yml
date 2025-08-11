@@ -11,59 +11,11 @@ jobs:
     steps:
      - name: checkout repository
        uses: actions/checkout@v3
+     - name: Check docker version 
+       run: docker --version 
 
      - name: Build docker images for calculator.go 
        run: docker build -t calculator.go -f dockerfile9 .
 
-     - name: run docker container for calculator.go 
-       run: echo "2 + 3" | docker run -i calculator.go 
-
-     - name: Build Docker image for satya-system_check
-       run: docker build -t satya-system_check -f dockerfile .
-
-     - name: Run Docker container for satya-system_check
-       run: docker run satya-system_check  
-
-     - name: Build Docker image for system_check1
-       run: docker build -t system_check1  -f dockerfile3 .    
-
-     - name: Run docker container for system_check1
-       run: docker run system_check1
-
-     - name: Build docker image for satya-hello
-       run: docker build -t satya-hello -f dockerfile1 .
-     
-     - name: Run docker container for satya-hello
-       run: docker run satya-hello
-
-     - name: Build docker image for sravani-image
-       run: docker build -t sravani-image -f dockerfile2 .
-     
-     - name: Run docker container for sravani-image
-       run: docker run sravani-image
-
-   
-     - name: Build Docker image for fool.py
-       run: docker build -t fool.py -f dockerfile4 .
-
-     - name: Run docker container for fool.py 
-       run: docker run fool.py
-    
-     - name: Build docker image for hi-image
-       run: docker build -t hi-image -f dockerfile5 .
-
-     - name: Run docker container for hi-image
-       run: docker run hi-image 
-
-     - name: Build docker image for aravind.py
-       run: docker build -t aravind.py -f dockerfile6 .
-
-     - name: run a docker conatiner for aravind.py
-       run: docker run aravind.py
-       
-     - name: Build docker image for main.py
-       run: docker build -t main.py -f stage_demo/dockerfile7 stage_demo 
-
-     - name: run a docker conatiner for main.py
-       run: docker run main.py
-
+     - name: run docker container with input  
+       run: echo "2 + 3" | docker run --rm  -i calculator.go 
