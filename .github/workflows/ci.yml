@@ -36,7 +36,7 @@ jobs:
        run: docker save -o calculator-image .tar satyach23/calculator.go:latest
 
      - name: upload docker iamge artifact 
-       uses: actions/upload-artifact@v3
+       uses: actions/upload-artifact@v4
        with: 
          name: docker-image 
          path: calculator-image.tar
