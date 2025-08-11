@@ -4,6 +4,6 @@ ENV GO111MODULE=off
 COPY calculator.go /calculator.go 
 RUN CGO_ENABLED=0  go build -o  /app /calculator.go
 
-FROM scartch
+FROM scratch
 COPY --from=build /app/calculator  /calculator
 ENTRYPOINT  ["/calculator"]
