@@ -1,8 +1,9 @@
-FROM ubuntu AS build
-RUN apt-get update && apt-get install -y golang
-ENV GO111MODULE=off
-COPY calculator.go /calculator.go 
-RUN CGO_ENABLED=0  go build -o  /app/calculator  /calculator.go
+FROM ubuntu:22.04  AS build
+RUN apt-get update && apt-get install -y golang-go && \
+    rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY calculator.go . 
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64   go build -a -installsuffix cgo  -o calculator calculator.go
 
 FROM scratch
 COPY --from=build /app/calculator  /calculator
