@@ -35,10 +35,10 @@ jobs:
        run: docker images
 
      - name: Save docker image to tar file
-       run: docker save -o calculator-image.tar satyach23/calculator.go:latest
+       run: docker save -o calculator.go.tar satyach23/calculator.go:latest
 
      - name: upload docker image artifact 
        uses: actions/upload-artifact@v4
        with: 
          name: docker-image 
-         path: calculator-image.tar
+         path: calculator.go.tar
