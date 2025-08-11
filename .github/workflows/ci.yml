@@ -1,4 +1,4 @@
-name: Devops journey  Pipeline
+name: Devops Pipeline
 
 on:
    push:
