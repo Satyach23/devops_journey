@@ -30,3 +30,12 @@ jobs:
 
      - name: run docker container with input  
        run: echo "2 + 3" | docker run --rm  -i calculator.go 
+
+
+     - name: Save docker image to tar file
+       run: docker save -o calculator-image .tar satyach23/calculator.go:latest
+
+     - name: upload docker iamge artifact 
+       uses: actions/upload-artifact@v3
+       with: docker image 
+       path:calculator-image.tar
