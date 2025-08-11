@@ -1,4 +1,4 @@
-name: Devops Pipeline
+  name: Devops Pipeline
 
 on:
    push:
@@ -37,5 +37,6 @@ jobs:
 
      - name: upload docker iamge artifact 
        uses: actions/upload-artifact@v3
-       with: docker-image 
-       path: calculator-image.tar
+       with: 
+          name:docker-image 
+          path: calculator-image.tar
