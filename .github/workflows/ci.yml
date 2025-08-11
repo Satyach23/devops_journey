@@ -38,4 +38,4 @@ jobs:
      - name: upload docker iamge artifact 
        uses: actions/upload-artifact@v3
        with: docker image 
-       path:calculator-image.tar
+       path: calculator-image.tar
