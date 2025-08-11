@@ -33,6 +33,8 @@ jobs:
 
      - name: List Docker images
        run: docker images
+     - name: Pull docker image
+       run: docker pull satyach23/calculator.go:latest
 
      - name: Save docker image to tar file
        run: docker save -o calculator.go.tar satyach23/calculator.go:latest
